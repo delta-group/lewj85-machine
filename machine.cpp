@@ -7,29 +7,28 @@ using namespace std;
 
 int machine()
 {
-	string input;      // initialize "input" as a string
-	bool allNums = true;    // are all values numbers
-	bool stringAdd = true;  // is the string "add"
+	string input;		// initialize "input" as a string
 	bool machineOn = true;  // keep looping ">" prompts
 
 	while(machineOn)
 	{
-		//prompt
+		// set/reset bools
+		bool allNums = false;    // are all values numbers
+		bool stringAdd = false;  // is the string "add"		
+
+		// prompt
 		cout << ">";
 
 		// assign input to "input"
 		getline (cin, input);
 
-		// check input for all numbers
-		int i;  // index counter
-		for(i=0; strlen(input.c_str()); i++)
+		// check input for "0"-"9"
+		for(int i = 0; i < strlen(input.c_str()); i++)
 		{
-			if(input[i]=='0' || input[i]=='1' || 
-			input[i]=='2' || input[i]=='3' || input[i]=='4' 
-			|| input[i]=='5' || input[i]=='6' || 
-			input[i]=='7' || input[i]=='8' || input[i]=='9')
+			if(input[i]>='0' && input[i]<='9')
 			{
 				allNums = true;
+				cout << input[i];
 			}
 			else
 			{
@@ -41,13 +40,9 @@ int machine()
 		if(input == "add")
 		{
 			stringAdd = true;
+			cout << "add";
 		}
-
-		// echo valid inputs
-		if(allNums == true || stringAdd == true)
-		{ 
-			cout << input;
-		}
+	cout << endl;
 	}
 
 	return 0;

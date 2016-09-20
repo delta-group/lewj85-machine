@@ -1,2 +1,2 @@
-int write(int parameter);
+int write(int valueToStore);
 

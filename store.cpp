@@ -2,7 +2,7 @@ const int MAX_SIZE = 10;
 int intArray(MAX_SIZE);
 int currentPos = 0;
 
-int write(int parameter)
+int write(int valueToStore)
 {
     bool success = true
     if(success)
