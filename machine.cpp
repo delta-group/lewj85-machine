@@ -8,9 +8,9 @@ using namespace std;
 int machine()
 {
 	string input;      // initialize "input" as a string
-	allNums = true;    // are all values numbers
-	stringAdd = true;  // is the string "add"
-	machineOn = true;  // keep looping ">" prompts
+	bool allNums = true;    // are all values numbers
+	bool stringAdd = true;  // is the string "add"
+	bool machineOn = true;  // keep looping ">" prompts
 
 	while(machineOn)
 	{
@@ -21,12 +21,13 @@ int machine()
 		getline (cin, input);
 
 		// check input for all numbers
+		int i;  // index counter
 		for(i=0; strlen(input.c_str()); i++)
 		{
-			if(input[i]=="0" || input[i]=="1" || 
-			input[i]=="2" || input[i]=="3" || input[i]=="4" 
-			|| input[i]=="5" || input[i]=="6" || 
-			input[i]=="7" || input[i]=="8" || input[i]=="9")
+			if(input[i]=='0' || input[i]=='1' || 
+			input[i]=='2' || input[i]=='3' || input[i]=='4' 
+			|| input[i]=='5' || input[i]=='6' || 
+			input[i]=='7' || input[i]=='8' || input[i]=='9')
 			{
 				allNums = true;
 			}
@@ -45,7 +46,7 @@ int machine()
 		// echo valid inputs
 		if(allNums == true || stringAdd == true)
 		{ 
-			cout << input << endl;
+			cout << input;
 		}
 	}
 
