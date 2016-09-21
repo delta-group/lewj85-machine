@@ -13,7 +13,7 @@ int write(int valueToStore)
     }
     else
     {
-        return 1;  // failed
+        return -1;  // failed
     }
 }
 

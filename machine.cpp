@@ -14,8 +14,10 @@ int machine(void)
 
 	while(machineOn)
 	{
-		// initialize newInput
+		// initialize variables and bools
 		string newInput = "";
+		bool allNums = false;
+		bool validInput = false;
 
 		// prompt
 		cout << ">";
@@ -30,18 +32,28 @@ int machine(void)
 			{
 				cout << input[i];
 				newInput.append(input,i,1);  // append each digit
+				allNums = true;
+				validInput = true;
 			}
+		}
+
+		if(allNums == true)
+		{
 			write(stoi(newInput));  // convert to int
 		}
 
 		// check input for "add"
 		if(input == "add")
 		{
-			cout << "add";
+			cout << to_string(add());
+			validInput = true;
 		}
-
-	// next line
-	cout << endl;
+	
+		if(validInput==true)
+		{
+		// next line
+		cout << endl;
+		}
 	}
 
 	return 0;
