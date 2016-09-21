@@ -1,5 +1,5 @@
 const int MAX_SIZE = 10;
-int intArray(MAX_SIZE);
+int intArray[MAX_SIZE];
 int currentPos = 0;
 
 // write function
